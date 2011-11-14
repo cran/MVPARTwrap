@@ -40,12 +40,12 @@ svaluecol<- function (dfxy, z, xax = 1, yax = 2, method = c("squaresize",
         br0 <- pretty(z, 6)
         nborn <- length(br0)
         coeff <- diff(par("usr")[1:2])/15
-        numclass <- cut.default(z, br0, include = TRUE, lab = FALSE)
+        numclass <- cut.default(z, br0, include.lowest = TRUE, labels = FALSE)
         valgris <- seq(1, 0, le = (nborn - 1))
         h <- csize * coeff
         for (i in 1:(nrow(dfxy))) {
             symbols(coo$x[i], coo$y[i], squares = h, bg = gray(valgris[numclass[i]]), 
-                add = TRUE, inch = FALSE)
+                add = TRUE, inches = FALSE)
         }
         scatterutil.legend.square.grey(br0, valgris, h/2, clegend)
         if (cpoint > 0) 
@@ -64,11 +64,11 @@ svaluecol<- function (dfxy, z, xax = 1, yax = 2, method = c("squaresize",
         	for (i in 1:(nrow(dfxy))) {
             	if (sign(z[i]) >= 0) {
                 	symbols(coo$x[i], coo$y[i], squares = sq[i], 
-                  	bg = "black", fg = "white", add = TRUE, inch = FALSE)
+                  	bg = "black", fg = "white", add = TRUE, inches = FALSE)
            			}
            		else {
             			symbols(coo$x[i], coo$y[i], squares = sq[i], 
-                  		bg = "white", fg = "black", add = TRUE, inch = FALSE)
+                  		bg = "white", fg = "black", add = TRUE, inches = FALSE)
             	}
         	}
         }
@@ -78,11 +78,11 @@ svaluecol<- function (dfxy, z, xax = 1, yax = 2, method = c("squaresize",
         	for (i in 1:(nrow(dfxy))) {
             	if (sign(z[i]) >= 0) {
                 	symbols(coo$x[i], coo$y[i], squares = sq[i], 
-                  	bg = col[i], fg = "grey60", add = TRUE, inch = FALSE)
+                  	bg = col[i], fg = "grey60", add = TRUE, inches = FALSE)
            			}
            		else {
             			symbols(coo$x[i], coo$y[i], squares = sq[i], 
-                  		bg = col[i], fg = "black", add = TRUE, inch = FALSE)
+                  		bg = col[i], fg = "black", add = TRUE, inches = FALSE)
             	}
         	}
         }

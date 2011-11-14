@@ -38,7 +38,7 @@ Dea'th, G. 2002. Multivariate regression tree : a new technique for modeling spe
 
 Ouellette, M.-H. & P. Legendre. An adjusted \eqn{{R}^2}{R^2} statistic for multivariate regression tree analysis. Manuscript.
 
-Ouellette, M.-H., Legendre, P. & B. Borcard. Cascade Multivariate Regression Tree: a novel approach for modelling nested explanatory sets (accepted for publication in Methods in Ecology and Evolution).
+Ouellette, M.-H., P. Legendre and D. Borcard. 2012. Cascade Multivariate Regression Tree: a novel approach for modelling nested explanatory sets. Methods in Ecology & Evolution 3: 234-244. 
 } 
 
 \examples{ 
@@ -54,13 +54,13 @@ require(ade4)
 # Note that we modify the data found in ade4 to match the data  
 # set provided with Numerical Ecology in R (Borcard et al 2011),  
 # the data set used in the paper Ouellette, Legendre & Borcard 
-# (accepted).
+# (2012).
 
 data(doubs)
 
 # Data importation #
-spe<-doubs$poi
-envmod<-doubs$mil
+spe<-doubs$fish
+envmod<-doubs$env
 envmod[,1]<-envmod[,1]/10
 envmod[7,1]<-36.8
 envmod[,3]<-round((exp(envmod[,3])-1)/10,1)

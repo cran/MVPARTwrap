@@ -4,6 +4,7 @@
 # TREE : object of class 'MRT'
 # T : number of times the algorithm should run
 # Tau_const : tuner parameter value
+# error_type : type of errior to add as perturbation
 # Explanatory matrix (for MRT objects)
 
 # Output : Adjusted R2
