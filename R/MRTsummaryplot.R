@@ -814,13 +814,15 @@ summary.MRT<-function(object,IndvalPART=TRUE,IndvalNODE=TRUE,...)
 			RWHEREnode<-object$RWHERE[[i]]
 			Ynode<-object$obj$y[c(LWHEREnode,RWHEREnode),]
 		
+			if (any(apply(Ynode>0,2,sum)==0)) {
+    		cat('eliminating null columns\n')
+    		Ynode <- Ynode[,apply(Ynode>0,2,sum)>0]
+			}
 			
-		clustnode<-c(mat.or.vec(length(LWHEREnode),1)+1,mat.or.vec(length(RWHEREnode),1)+2)
+			clustnode<-c(mat.or.vec(length(LWHEREnode),1)+1,mat.or.vec(length(RWHEREnode),1)+2)
 
-			
 			INDVALnode<-indval(Ynode,clustering=clustnode,numitr=1000)
 
-			
 			cat('\n','~ INDVAL species for this node: : left is 1, right is 2','\n',sep='')
 			summary(INDVALnode, p=0.05, type='short', ...)
 		}
