@@ -52,7 +52,7 @@ mite.tree<-mvpart(data.matrix(mite.hell) ~ data.matrix(mite.env[,-2])
 xv='min',xvmult=1000)
 
 # Get graphic window ready #
-quartz(width=10, height=7.5)
+dev.new(width=10, height=7.5)
 par(cex=0.4)
 # Get prettier tree #
 res<-MRT(mite.tree,10)
