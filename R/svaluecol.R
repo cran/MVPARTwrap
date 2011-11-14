@@ -6,7 +6,7 @@ svaluecol<- function (dfxy, z, xax = 1, yax = 2, method = c("squaresize",
     pixmap = NULL, contour = NULL, area = NULL, add.plot = FALSE,col='black') 
 {
 	# If not previously loaded
-	if(!any(search()=="package:ade4")) require(ade4)
+	# if(!any(search()=="package:ade4")) require(ade4)
 	
     dfxy <- data.frame(dfxy)
     if (length(z) != nrow(dfxy)) 

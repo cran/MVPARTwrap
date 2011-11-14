@@ -49,7 +49,7 @@ WaterCont.poly = poly(mite.env[,2], 3)
 
 mite.tree<-mvpart(data.matrix(mite.hell) ~ data.matrix(mite.env[,-2])
 + WaterCont.poly, data=as.data.frame(cbind(mite.env,WaterCont.poly)),
-xv='min',xvmult=1000)
+xv='min',xvmult=40)
 
 # Get graphic window ready #
 dev.new(width=10, height=7.5)
@@ -84,7 +84,7 @@ plot(MRT.mite.tree,type='tree')
 summary(MRT.mite.tree)
 
 # Calculate R2a
-R2aGDF(MRT.mite.tree, T=100, tau_const=0.6, X=cbind(mite.env[,-2],
+R2aGDF(MRT.mite.tree, T=40, tau_const=0.6, X=cbind(mite.env[,-2],
 WaterCont.poly))
 
 } 

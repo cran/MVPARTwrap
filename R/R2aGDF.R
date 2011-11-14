@@ -12,7 +12,7 @@
 R2aGDF<-function(TREE,T,tau_const,X=NULL,...)
 {
 	# Initialisation
-	require(mvpart)
+	# require(mvpart)
 	
 	# Defining the response (Y) and explanatory matrices (X), number of objects n, number of species s, variance of each species sigmas, coefficient of determination of the tree R2
 	

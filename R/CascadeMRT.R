@@ -13,7 +13,7 @@ CascadeMRT<-function(Y,VSG,VA,xv1='min',xvSUB='min',minbucket1=5,minbucketSUB=2,
 	if(!is.data.frame(VA)) stop('VA should be a data.frame')
 	
 	# If not previously loaded
-	if(!any(search()=="package:mvpart")) require(mvpart)
+	#if(!any(search()=="package:mvpart")) require(mvpart)
 	
 	# Initialisation
 	drops<-list()

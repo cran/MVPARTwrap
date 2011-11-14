@@ -9,6 +9,11 @@ import(
   mvpart,
   labdsv,
   vegan,
-  fBasics,
-  ade4
+  fBasics
+)
+
+importFrom(ade4,
+scatterutil.base,
+scatterutil.legend.bw.square,
+scatterutil.legend.square.grey
 )

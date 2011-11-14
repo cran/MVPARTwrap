@@ -74,7 +74,7 @@ mite.hel <- decostand(mite, "hellinger")
 W<-mite.env[,4]
 
 MITE<-CascadeMRT(Y=mite.hel, VSG=mite.env[,-4], VA=data.frame(W), 
-xvmult=500,xvSUB='pick',cp1=0.1)
+xvmult=100,xvSUB='pick',cp1=0.1)
 CasMRTR2(MITE,NodeADMIT=c(3,2))
 
 } 

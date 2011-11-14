@@ -7,7 +7,7 @@ MRT<-function(obj,percent=10,species=NULL,LABELS=FALSE,...)
 
 {
 	
-	require(Hmisc)
+	#require(Hmisc)
 
 # obj is the mvpart object
 # percent : percentage considered discriminant species
@@ -405,7 +405,7 @@ plot.MRT<-function(x,NodeMarking=TRUE,typeplot=c('tree'),Cex=0.5,widthtree=7, he
 plot_tree<-function(obj,NodeMarking,R2,Cex,widthtree,heighttree,LABELS,R2A=FALSE,X=NULL,T=NULL,...)
 {
 
-	require(Hmisc)
+	#require(Hmisc)
 
 	# points in node
 	a=3
@@ -813,10 +813,13 @@ summary.MRT<-function(object,IndvalPART=TRUE,IndvalNODE=TRUE,...)
 			LWHEREnode<-object$LWHERE[[i]]
 			RWHEREnode<-object$RWHERE[[i]]
 			Ynode<-object$obj$y[c(LWHEREnode,RWHEREnode),]
-			clustnode<-c(mat.or.vec(length(LWHEREnode),1),mat.or.vec(length(RWHEREnode),1)+1)
+		
 			
+		clustnode<-c(mat.or.vec(length(LWHEREnode),1)+1,mat.or.vec(length(RWHEREnode),1)+2)
+
 			
 			INDVALnode<-indval(Ynode,clustering=clustnode,numitr=1000)
+
 			
 			cat('\n','~ INDVAL species for this node: : left is 1, right is 2','\n',sep='')
 			summary(INDVALnode, p=0.05, type='short', ...)
